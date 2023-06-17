@@ -14,14 +14,12 @@ function save() {
         $('.cd-cart__product').each(function(){
             var nama = this.getAttribute('data-nama')
             var harga = this.getAttribute('data-harga')
-            var bahan = this.getAttribute('data-bahan')
             var productId = this.getAttribute('data-productId')
             var qty = $('#cd-product-'+productId+' :selected').text()
 
             listNama.push(nama)
             listHarga.push(harga)
             listQty.push(qty)
-            listBahan.push(bahan)
 
         }); 
         console.log(listNama) 
@@ -141,17 +139,10 @@ $("#re").css("visibility","hidden");
 
 $.getJSON(url, function (json) {
 
-    // Set the variables from the results array
-   
-   
-  
+    // CREATE DYNAMIC TABLE.
+    var table = document.createElement("table");
 
-        // CREATE DYNAMIC TABLE.
-        var table = document.createElement("table");
-
-		
-
-        var header = table.createTHead();
+    var header = table.createTHead();
 		var row = header.insertRow(0);     
 		var cell1 = row.insertCell(0);
 		var cell2 = row.insertCell(1);

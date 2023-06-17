@@ -15,14 +15,13 @@
 
   <!-- Mine -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>JP Sragi</title>
+  <title>Mau Makan</title>
 </head>
 
 <body>
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="https://fitriyadhie.github.io/">
-      <img src="assets/img/logo.png" alt="Jelly Potter" width="80" height="35" class="pl-1">
-      <span class="navbar-brand mb-0 h1">Sragi</span>
+      <img src="assets/img/logo.webp" alt="Jelly Potter" width="90" height="40" class="pl-1">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +31,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="https://fitriyadhie.github.io/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -40,25 +39,10 @@
             Menu
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#fruit-squash">Fruit Squash</a>
-            <a class="dropdown-item" href="#chocolate">Chocolate</a>
-            <a class="dropdown-item" href="#blue-ocean-mix">Blue Ocean Mix</a>
-            <a class="dropdown-item" href="#yakult-mix">Yakult Mix</a>
-            <a class="dropdown-item" href="#yelpot-special-mix">Jelpot Special Mix</a>
-            <a class="dropdown-item" href="#varian-baru">Menu Varian Baru</a>
-            <a class="dropdown-item" href="#varial-special">Varial Special</a>
-            <a class="dropdown-item" href="#avocado-series">Avocado Series</a>
-            <a class="dropdown-item" href="#hot-drink">Hot Drink Menu</a>
-            <a class="dropdown-item" href="#extra">Extra</a>
+            <a class="dropdown-item" href="#frozen">Frozen</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://fitriyadhie.github.io/html/pengeluaran.html">Pengeluaran</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://fitriyadhie.github.io/html/stok.html">Stok</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -91,17 +75,37 @@
           <span class="cd-cart__undo">Item removed. <a href="#0">Undo</a></span>
         </header>
         <div class="cd-cart__body-title">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">
-                <img width='17px'
-                  src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojNjA2MTYxO308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxnIGRhdGEtbmFtZT0iTGF5ZXIgNyIgaWQ9IkxheWVyXzciPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE5Ljc1LDE1LjY3YTYsNiwwLDEsMC03LjUxLDBBMTEsMTEsMCwwLDAsNSwyNnYxSDI3VjI2QTExLDExLDAsMCwwLDE5Ljc1LDE1LjY3Wk0xMiwxMWE0LDQsMCwxLDEsNCw0QTQsNCwwLDAsMSwxMiwxMVpNNy4wNiwyNWE5LDksMCwwLDEsMTcuODksMFoiLz48L2c+PC9zdmc+" />
-
-              </span>
+          <form>
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Nama</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Nama" id="nama-p">
+              </div>
             </div>
-            <input type="text" class="form-control" placeholder="Nama" id="nama-p">
-            <input type="text" class="form-control" placeholder="Catatan" id="catatan">
-          </div>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">No hp</label>
+              <div class="col-sm-10">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">62</div>
+                  </div>
+                  <input type="text" class="form-control" placeholder="No HP" id="no-hp">
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Alamat</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="alamat"></textarea>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Catatan</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Catatan" id="catatan">
+              </div>
+            </div>
+          </form>
         </div>
 
         <div class="cd-cart__body">

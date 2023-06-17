@@ -33,11 +33,5 @@ function read_list_menu() {
           generatz()
 
           $(".load-list").remove();
-            // // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-            // var divContainer = document.getElementById("showData");
-            // divContainer.innerHTML = "";
-            // divContainer.appendChild(table);
-            // document.getElementById("loader").style.visibility = "hidden";
-            // $("#re").css("visibility","visible");
     });
 }
