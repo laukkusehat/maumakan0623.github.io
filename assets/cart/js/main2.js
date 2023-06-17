@@ -116,7 +116,7 @@ function generatz(){
 			
 			var topPosition = product.offsetTop,
 				productQuantity = Number(product.getElementsByTagName('select')[0].value),
-				productTotPrice = Number((product.getElementsByClassName('cd-cart__price')[0].innerText).replace('Rp ', '')) * productQuantity;
+				productTotPrice = Number((product.getElementsByClassName('cd-cart__price')[0].innerText).replace('Rp. ', '')) * productQuantity;
 
 			product.style.top = topPosition+'px';
 			Util.addClass(product, 'cd-cart__product--deleted');

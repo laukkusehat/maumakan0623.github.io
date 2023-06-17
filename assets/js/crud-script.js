@@ -1,6 +1,5 @@
 
-var pesanan, user, alamat, noHp, catatan;
-var totHarga =0;
+var pesanan, user, alamat, noHp, catatan, totHarga=0;
 function save() {
     validateForm()
 
@@ -31,11 +30,13 @@ function checkout(){
           var productId = this.getAttribute('data-productId')
           var qty = $('#cd-product-'+productId+' :selected').text()
 
-          listPesanan.push("%0A"+namaProduct +" (jumlah :"+qty+")")
-          totHarga += parseInt(harga)
+          listPesanan.push("%0A"+namaProduct +" (harga: Rp. "+harga.toLocaleString('id-ID')+", jumlah :"+qty+")")
+          hargaQty = harga*qty
+          totHarga += parseInt(hargaQty)
 
       }); 
       console.log(listPesanan) 
+
 
       var url = script_url+"?callback=sendWA&pesanan="+listPesanan.join()+"&totHarga="+totHarga+"&user="+user+"&noHp="+noHp+"&alamat="+alamat+"&catatan="+catatan+"&action=insert";
 
@@ -197,16 +198,17 @@ $.getJSON(url, function (json) {
 
   function sendWA(){
     var textWA = "https://wa.me/6288212493692?text="
-    textWA += "Halo Mau Makan%0A"
-    textWA += "Nama : "+user
+    textWA += "Halo Mau Makan !"
+    textWA += "%0A=============="
+    textWA += "%0ANama : "+user
     textWA += "%0ANo Hp : "+noHp
     textWA += "%0AAlamat : "+alamat
     textWA += "%0ACatatan : "+catatan
     textWA += "%0A=============="
     textWA += "%0APesanan : "+pesanan
     textWA += "%0A=============="
-    textWA += "%0ATotal :"+totHarga
-    textWA += "%0A*Belum Termasuk Ongkos Kirim :"+totHarga
+    textWA += "%0ATotal : Rp. "+totHarga.toLocaleString('id-ID')
+    textWA += "%0A*Belum Termasuk Ongkos Kirim"
 
 
 

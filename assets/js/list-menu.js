@@ -24,7 +24,7 @@ function read_list_menu() {
               x.innerHTML +=
               "<tr>" +
                 "<td>" + product + "</td>" +
-                "<td>" + harga + "</td>" +
+                "<td>Rp. " + harga.toLocaleString('id-ID') + "</td>" +
                 "<td>" + "<a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price=\""+harga+"\" data-product=\""+product+"\" data-bahan=\""+bahan+"\">Add To Cart</a>" + "</td>" +
               "</tr>";
             }else{
