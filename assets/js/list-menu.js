@@ -1,5 +1,11 @@
 $(document).ready(function(){
     read_list_menu()
+
+    document.getElementById("nama-p").value = localStorage.getItem('user');
+    document.getElementById("alamat").value = localStorage.getItem('alamat');
+    document.getElementById("no-hp").value = localStorage.getItem('noHp');
+    document.getElementById("catatan").value = localStorage.getItem('catatan');
+
 });
 
 function read_list_menu() {

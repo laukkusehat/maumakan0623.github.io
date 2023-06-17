@@ -1,42 +1,66 @@
 
-var pesanan;
+var pesanan, user, alamat, noHp, catatan;
+var totHarga =0;
 function save() {
-    $(".cd-cart__checkout").remove();
-    $(".cd-cart__footer").html('<a href="#0" class="cd-cart__checkout"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></a>')
+    validateForm()
 
-    var listPesanan =[]; 
+}
 
-    var user = $( "#nama-p" ).val();
-    // var alamat = $( "#alamat" ).val();
-    var alamat = document.getElementById("alamat").value;
-    var noHp = $( "#no-hp" ).val();
-    var catatan = $( "#catatan" ).val();
+function checkout(){
+  
+  $(".cd-cart__checkout").remove();
+  $(".cd-cart__footer").html('<a href="#0" class="cd-cart__checkout"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></a>')
 
-    var totHarga =0;
+  var listPesanan =[]; 
 
-        $('.cd-cart__product').each(function(){
-            var namaProduct = this.getAttribute('data-product')
-            var harga = this.getAttribute('data-harga')
-            var productId = this.getAttribute('data-productId')
-            var qty = $('#cd-product-'+productId+' :selected').text()
+  user = $( "#nama-p" ).val();
+  alamat = document.getElementById("alamat").value;
+  noHp = $( "#no-hp" ).val();
+  catatan = $( "#catatan" ).val();
 
-            listPesanan.push(namaProduct +"("+qty+")")
-            totHarga += parseInt(harga)
+  //save session storage
+  localStorage.setItem('user', user);
+  localStorage.setItem('alamat', alamat);
+  localStorage.setItem('noHp', noHp);
+  localStorage.setItem('catatan', catatan);
 
-        }); 
-        console.log(listPesanan) 
 
-        var url = script_url+"?callback=sendWA&pesanan="+listPesanan.join()+"&totHarga="+totHarga+"&user="+user+"&noHp="+noHp+"&alamat="+alamat+"&catatan="+catatan+"&action=insert";
+      $('.cd-cart__product').each(function(){
+          var namaProduct = this.getAttribute('data-product')
+          var harga = this.getAttribute('data-harga')
+          var productId = this.getAttribute('data-productId')
+          var qty = $('#cd-product-'+productId+' :selected').text()
 
-        pesanan = listPesanan.join()
-        console.log(url)
+          listPesanan.push("%0A"+namaProduct +" (jumlah :"+qty+")")
+          totHarga += parseInt(harga)
 
-        var request = jQuery.ajax({
-            crossDomain: true,
-            url: url ,
-            method: "GET",
-            dataType: "jsonp"
-        });
+      }); 
+      console.log(listPesanan) 
+
+      var url = script_url+"?callback=sendWA&pesanan="+listPesanan.join()+"&totHarga="+totHarga+"&user="+user+"&noHp="+noHp+"&alamat="+alamat+"&catatan="+catatan+"&action=insert";
+
+      pesanan = listPesanan.join()
+      console.log(url)
+
+      var request = jQuery.ajax({
+          crossDomain: true,
+          url: url ,
+          method: "GET",
+          dataType: "jsonp"
+      });
+}
+
+function validateForm() {
+  let nama = document.forms["fCustomer"]["nama"].value;
+  let noHp = document.forms["fCustomer"]["noHp"].value;
+  let alamat = document.forms["fCustomer"]["alamat"].value;
+
+  if (nama == "" || noHp == "" || alamat == "" ) {
+    alert("Mohon Lengkapi Identitas");
+    return false;
+  }else{
+    checkout()
+  }
 }
   
   
@@ -172,5 +196,20 @@ $.getJSON(url, function (json) {
   
 
   function sendWA(){
-    location.href = "https://wa.me/6288212493692?text=Halo%20MAU%20MAKAN"+pesanan
+    var textWA = "https://wa.me/6288212493692?text="
+    textWA += "Halo Mau Makan%0A"
+    textWA += "Nama : "+user
+    textWA += "%0ANo Hp : "+noHp
+    textWA += "%0AAlamat : "+alamat
+    textWA += "%0ACatatan : "+catatan
+    textWA += "%0A=============="
+    textWA += "%0APesanan : "+pesanan
+    textWA += "%0A=============="
+    textWA += "%0ATotal :"+totHarga
+    textWA += "%0A*Belum Termasuk Ongkos Kirim :"+totHarga
+
+
+
+
+    location.href = textWA
   }
