@@ -7,7 +7,7 @@ function read_list_menu() {
    $.getJSON(url, function (json) {
         // ADD JSON DATA TO THE TABLE AS ROWS.
         for (var i = 0; i < json.records.length; i++) {
-            let nama = json.records[i].Nama;
+            let product = json.records[i].Product;
             let harga = json.records[i].Harga;
             let menu = json.records[i].Menu;
             let bahan = json.records[i].Bahan;
@@ -17,14 +17,14 @@ function read_list_menu() {
             if(menu=='yes'){
               x.innerHTML +=
               "<tr>" +
-                "<td>" + nama + "</td>" +
+                "<td>" + product + "</td>" +
                 "<td>" + harga + "</td>" +
-                "<td>" + "<a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price=\""+harga+"\" data-nama=\""+nama+"\" data-bahan=\""+bahan+"\">Add To Cart</a>" + "</td>" +
+                "<td>" + "<a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price=\""+harga+"\" data-product=\""+product+"\" data-bahan=\""+bahan+"\">Add To Cart</a>" + "</td>" +
               "</tr>";
             }else{
               x.innerHTML +=
               "<tr id=\""+harga+"\" class=\"table-info\">"+
-                "<th colspan=\"3\">"+nama+"</th>"+
+                "<th colspan=\"3\">"+product+"</th>"+
               "</tr>";
             }
       
