@@ -17,7 +17,6 @@ function generatz(){
 
 		function initCartEvents() {
 			for(var i = 0; i < cartAddBtns.length; i++) {(function(i){
-				console.log(cartAddBtns[i])
 				cartAddBtns[i].addEventListener('click', addToCart);
 			})(i);}
 

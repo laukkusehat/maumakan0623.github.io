@@ -14,36 +14,46 @@ function read_list_menu() {
         // ADD JSON DATA TO THE TABLE AS ROWS.
         for (var i = 0; i < json.records.length; i++) {
             let product = json.records[i].Product;
+            let desc = json.records[i].Desc;
             let harga = json.records[i].Harga;
             let menu = json.records[i].Menu;
             let bahan = json.records[i].Bahan;
             let stok = json.records[i].Stok;
+            let linkImage = json.records[i].Image;
       
             var x = document.getElementById("list-menu");
       
             if(menu=='yes'){
               if(stok=='Habis'){
-                x.innerHTML +=
-                "<tr>" +
-                  "<td>" + product + "</td>" +
-                  "<td>Rp. " + harga.toLocaleString('id-ID') + "</td>" +
-                  "<td>" +"Habis"+ "</td>" +
-                "</tr>";
+                var myProduct = '<div class="card" style="min-width: 50%;">';
+                    myProduct += '<img class="card-img-top" src="assets/img/product/' + linkImage +'" alt="Card image cap">'
+                    myProduct += '<div class="card-body">'
+                    myProduct += '<h5 class="card-title">' + product +'</h5>'
+                    myProduct += '<p class="card-text">' + desc +'</p>'
+                    myProduct += '<p class="card-text text-right text-bottom" style="font-weight: 600; font-size: 21pt;">Habis</p>'
+                    myProduct += '</div></div>'
+                  x.innerHTML += myProduct
+                
               }else {
-                x.innerHTML +=
-                "<tr>" +
-                  "<td>" + product + "</td>" +
-                  "<td>Rp. " + harga.toLocaleString('id-ID') + "</td>" +
-                  "<td>" + "<a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price=\""+harga+"\" data-product=\""+product+"\" data-bahan=\""+bahan+"\">"+
-                  "Add to Cart"
-                  +"</a>" + "</td>" +
-                "</tr>";
+                var myProduct = '<div class="card" style="min-width: 50%;">';
+                    myProduct += '<img class="card-img-top" src="assets/img/product/' + linkImage +'" alt="Card image cap">'
+                    myProduct += '<div class="card-body">'
+                    myProduct += '<h5 class="card-title">' + product +'</h5>'
+                    myProduct += '<p class="card-text">' + desc +'</p>'
+                    myProduct += '<p class="card-text text-right text-bottom"><span style="margin-right:5%; font-size: 21pt; font-weight: 700;">Rp. ' + harga.toLocaleString('id-ID') +'</span> <a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price='+ harga +' data-product='+ product +' data-bahan='+ bahan +'>'
+                    myProduct += 'Add to Cart'
+                    myProduct += '</a></p>'
+                    myProduct += '</div></div>'
+                  x.innerHTML += myProduct
+                // x.innerHTML +=
+                // "<tr>" +
+                //   "<td>" + product + "</td>" +
+                //   "<td>Rp. " + harga.toLocaleString('id-ID') + "</td>" +
+                //   "<td>" + "<a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price=\""+harga+"\" data-product=\""+product+"\" data-bahan=\""+bahan+"\">"+
+                //   "Add to Cart"
+                //   +"</a>" + "</td>" +
+                // "</tr>";
               }
-            }else{
-              x.innerHTML +=
-              "<tr id=\""+harga+"\" class=\"table-info\">"+
-                "<th colspan=\"3\">"+product+"</th>"+
-              "</tr>";
             }
       
           }
