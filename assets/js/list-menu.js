@@ -17,16 +17,28 @@ function read_list_menu() {
             let harga = json.records[i].Harga;
             let menu = json.records[i].Menu;
             let bahan = json.records[i].Bahan;
+            let stok = json.records[i].Stok;
       
             var x = document.getElementById("list-menu");
       
             if(menu=='yes'){
-              x.innerHTML +=
-              "<tr>" +
-                "<td>" + product + "</td>" +
-                "<td>Rp. " + harga.toLocaleString('id-ID') + "</td>" +
-                "<td>" + "<a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price=\""+harga+"\" data-product=\""+product+"\" data-bahan=\""+bahan+"\">Add To Cart</a>" + "</td>" +
-              "</tr>";
+              if(stok=='Habis'){
+                x.innerHTML +=
+                "<tr>" +
+                  "<td>" + product + "</td>" +
+                  "<td>Rp. " + harga.toLocaleString('id-ID') + "</td>" +
+                  "<td>" +"Habis"+ "</td>" +
+                "</tr>";
+              }else {
+                x.innerHTML +=
+                "<tr>" +
+                  "<td>" + product + "</td>" +
+                  "<td>Rp. " + harga.toLocaleString('id-ID') + "</td>" +
+                  "<td>" + "<a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price=\""+harga+"\" data-product=\""+product+"\" data-bahan=\""+bahan+"\">"+
+                  "Add to Cart"
+                  +"</a>" + "</td>" +
+                "</tr>";
+              }
             }else{
               x.innerHTML +=
               "<tr id=\""+harga+"\" class=\"table-info\">"+
