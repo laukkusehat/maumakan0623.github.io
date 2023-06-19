@@ -1,5 +1,5 @@
 
-var pesanan, user, alamat, noHp, catatan, totHarga=0;
+var pesanan, user, alamat, noHp, pengiriman, catatan, totHarga=0;
 function save() {
     validateForm()
 
@@ -14,6 +14,7 @@ function checkout(){
 
   user = $( "#nama-p" ).val();
   alamat = document.getElementById("alamat").value;
+  pengiriman = document.getElementById("pengiriman").value;
   noHp = $( "#no-hp" ).val();
   catatan = $( "#catatan" ).val();
 
@@ -38,7 +39,9 @@ function checkout(){
       console.log(listPesanan) 
 
 
-      var url = script_url+"?callback=sendWA&pesanan="+listPesanan.join()+"&totHarga="+totHarga+"&user="+user+"&noHp="+noHp+"&alamat="+alamat+"&catatan="+catatan+"&action=insert";
+      var url = script_url+"?callback=sendWA&pesanan="+listPesanan.join()+"&totHarga="+totHarga+"&user="+user+"&noHp="+noHp+"&alamat="+alamat+"&catatan="+catatan;
+          url += "&pengiriman="+pengiriman
+          url += "&action=insert"
 
       pesanan = listPesanan.join()
       console.log(url)
@@ -55,9 +58,10 @@ function validateForm() {
   let nama = document.forms["fCustomer"]["nama"].value;
   let noHp = document.forms["fCustomer"]["noHp"].value;
   let alamat = document.forms["fCustomer"]["alamat"].value;
+  let pengiriman = document.forms["fCustomer"]["pengiriman"].value;
 
-  if (nama == "" || noHp == "" || alamat == "" ) {
-    alert("Mohon Lengkapi Identitas");
+  if (nama == "" || noHp == "" || alamat == "" || pengiriman == "Pilih" ) {
+    alert("Mohon Lengkapi Data Pengiriman");
     return false;
   }else{
     checkout()
@@ -204,6 +208,7 @@ $.getJSON(url, function (json) {
     textWA += "%0ANo Hp : "+noHp
     textWA += "%0AAlamat : "+alamat
     textWA += "%0ACatatan : "+catatan
+    textWA += "%0APengiriman : "+pengiriman
     textWA += "%0A=============="
     textWA += "%0APesanan : "+pesanan
     textWA += "%0A=============="
