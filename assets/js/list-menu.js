@@ -40,7 +40,7 @@ function read_list_menu() {
                     myProduct += '<div class="card-body">'
                     myProduct += '<h5 class="card-title">' + product +'</h5>'
                     myProduct += '<p class="card-text">' + desc +'</p>'
-                    myProduct += '<p class="card-text text-right card-header"><span style="margin-right:5%; font-size: 21pt; font-weight: 700;">Rp. ' + harga.toLocaleString('id-ID') +'</span> <a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price='+ harga +' data-product='+ product +' data-bahan='+ bahan +'>'
+                    myProduct += '<p class="card-text text-right card-header"><span style="margin-right:5%; font-size: 21pt; font-weight: 700;">Rp. ' + harga.toLocaleString('id-ID') +'</span> <a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price=\"'+ harga +'\" data-product=\"'+ product +'\" data-bahan=\"'+ bahan +'\">'
                     myProduct += 'Add to Cart'
                     myProduct += '</a></p>'
                     myProduct += '</div></div>'
