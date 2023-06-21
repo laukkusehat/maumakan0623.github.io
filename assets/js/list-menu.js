@@ -11,15 +11,23 @@ $(document).ready(function(){
 function read_list_menu() {
     var url = script_url+"?action=list-menu";
    $.getJSON(url, function (json) {
+        data =json.records
+        data = data.sort((a, b) => {
+          if (a.Stok > b.Stok) {
+            return -1;
+          }
+        });
+        console.log(data)
+
         // ADD JSON DATA TO THE TABLE AS ROWS.
-        for (var i = 0; i < json.records.length; i++) {
-            let product = json.records[i].Product;
-            let desc = json.records[i].Desc;
-            let harga = json.records[i].Harga;
-            let menu = json.records[i].Menu;
-            let bahan = json.records[i].Bahan;
-            let stok = json.records[i].Stok;
-            let linkImage = json.records[i].Image;
+        for (var i = 0; i < data.length; i++) {
+            let product = data[i].Product;
+            let desc = data[i].Desc;
+            let harga = data[i].Harga;
+            let menu = data[i].Menu;
+            let bahan = data[i].Bahan;
+            let stok = data[i].Stok;
+            let linkImage = data[i].Image;
       
             var x = document.getElementById("list-menu");
       
