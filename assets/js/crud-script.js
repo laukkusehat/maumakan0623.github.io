@@ -204,18 +204,16 @@ $.getJSON(url, function (json) {
     var textWA = "https://wa.me/6288212493692?text="
     textWA += "Halo Mau Makan !"
     textWA += "%0A=============="
-    textWA += "%0ANama : "+user
+    textWA += "%0APenerima : "+user
     textWA += "%0ANo Hp : "+noHp
     textWA += "%0AAlamat : "+alamat
     textWA += "%0ACatatan : "+catatan
-    textWA += "%0APengiriman : "+pengiriman
+    textWA += "%0AJadwal Pengiriman : "+pengiriman
     textWA += "%0A=============="
     textWA += "%0APesanan : "+pesanan
     textWA += "%0A=============="
     textWA += "%0ATotal : Rp. "+totHarga.toLocaleString('id-ID')
     textWA += "%0A*Belum Termasuk Ongkos Kirim"
-
-
 
 
     location.href = textWA
