@@ -33,26 +33,50 @@ function read_list_menu() {
       
             if(menu=='yes'){
               if(stok=='Habis'){
-                var myProduct = '<div class="card border-secondary" style="min-width: 50%;max-width: 50%;">';
-                    myProduct += '<img class="card-img-top" src="assets/img/product/' + linkImage +'" alt="Card image cap">'
-                    myProduct += '<div class="card-body">'
-                    myProduct += '<h5 class="card-title">' + product +'</h5>'
-                    myProduct += '<p class="card-text">' + desc +'</p>'
-                    myProduct += '<p class="card-text text-right card-header" style="font-weight: 600; font-size: 21pt;">Habis</p>'
-                    myProduct += '</div></div>'
-                  x.innerHTML += myProduct
+
+                var myProduct = '<li class="cards__item">';
+                    myProduct += '<div class="card">'
+                    myProduct += '<div class="card__image" style="background-image: url(assets/img/product/' + linkImage +');"></div>'
+                    myProduct += '<div class="card__content">'
+                    myProduct += '<div class="card__title">' + product +'</div>'
+                    myProduct += '<p class="card__text">' + desc +'</p>'
+                    myProduct += '<p class="card__text habis">Habis</h4></p>'
+                    myProduct += '</div></div></li>'
+                    x.innerHTML += myProduct
+
+
+                // var myProduct = '<div class="card border-secondary" style="max-width:45%;">';
+                //     myProduct += '<img class="card-img-top" src="assets/img/product/' + linkImage +'" alt="Card image cap">'
+                //     myProduct += '<div class="card-body">'
+                //     myProduct += '<h5 class="card-title">' + product +'</h5>'
+                //     myProduct += '<p class="card-text">' + desc +'</p>'
+                //     myProduct += '<p class="card-text text-right card-header" style="font-weight: 600; font-size: 21pt;">Habis</p>'
+                //     myProduct += '</div></div>'
+                //   x.innerHTML += myProduct
                 
               }else {
-                var myProduct = '<div class="card border-secondary" style="min-width: 50%; max-width: 50%;">';
-                    myProduct += '<img class="card-img-top" src="assets/img/product/' + linkImage +'" alt="Card image cap">'
-                    myProduct += '<div class="card-body">'
-                    myProduct += '<h5 class="card-title">' + product +'</h5>'
-                    myProduct += '<p class="card-text">' + desc +'</p>'
-                    myProduct += '<p class="card-text text-right card-header"><span style="margin-right:5%; font-size: 21pt; font-weight: 700;">Rp. ' + harga.toLocaleString('id-ID') +'</span> <a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price=\"'+ harga +'\" data-product=\"'+ product +'\" data-bahan=\"'+ bahan +'\">'
+                var myProduct = '<li class="cards__item">';
+                    myProduct += '<div class="card">'
+                    myProduct += '<div class="card__image" style="background-image: url(assets/img/product/' + linkImage +');"></div>'
+                    myProduct += '<div class="card__content">'
+                    myProduct += '<div class="card__title">' + product +'</div>'
+                    myProduct += '<p class="card__text">' + desc +'</p>'
+                    myProduct += '<a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price=\"'+ harga +'\" data-product=\"'+ product +'\" data-bahan=\"'+ bahan +'\">'
                     myProduct += 'Add to Cart'
-                    myProduct += '</a></p>'
-                    myProduct += '</div></div>'
-                  x.innerHTML += myProduct
+                    myProduct += '</a>'
+                    myProduct += '</div></div></li>'
+                    x.innerHTML += myProduct
+
+                // var myProduct = '<div class="card border-secondary" style="max-width:45%;">';
+                //     myProduct += '<img class="card-img-top" src="assets/img/product/' + linkImage +'" alt="Card image cap">'
+                //     myProduct += '<div class="card-body">'
+                //     myProduct += '<h5 class="card-title">' + product +'</h5>'
+                //     myProduct += '<p class="card-text">' + desc +'</p>'
+                //     myProduct += '<p class="card-text text-right card-header"><span style="margin-right:5%; font-size: 21pt; font-weight: 700;">Rp. ' + harga.toLocaleString('id-ID') +'</span> <a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price=\"'+ harga +'\" data-product=\"'+ product +'\" data-bahan=\"'+ bahan +'\">'
+                //     myProduct += 'Add to Cart'
+                //     myProduct += '</a></p>'
+                //     myProduct += '</div></div>'
+                //   x.innerHTML += myProduct
                 // x.innerHTML +=
                 // "<tr>" +
                 //   "<td>" + product + "</td>" +
