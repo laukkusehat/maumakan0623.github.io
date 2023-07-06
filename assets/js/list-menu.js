@@ -33,7 +33,7 @@ function read_list_menu() {
       
             if(menu=='yes'){
               if(stok=='Habis'){
-                var myProduct = '<div class="card border-secondary" style="min-width: 50%;">';
+                var myProduct = '<div class="card border-secondary" style="min-width: 50%;max-width: 50%;">';
                     myProduct += '<img class="card-img-top" src="assets/img/product/' + linkImage +'" alt="Card image cap">'
                     myProduct += '<div class="card-body">'
                     myProduct += '<h5 class="card-title">' + product +'</h5>'
@@ -43,7 +43,7 @@ function read_list_menu() {
                   x.innerHTML += myProduct
                 
               }else {
-                var myProduct = '<div class="card border-secondary" style="min-width: 50%;">';
+                var myProduct = '<div class="card border-secondary" style="min-width: 50%; max-width: 50%;">';
                     myProduct += '<img class="card-img-top" src="assets/img/product/' + linkImage +'" alt="Card image cap">'
                     myProduct += '<div class="card-body">'
                     myProduct += '<h5 class="card-title">' + product +'</h5>'
