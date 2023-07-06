@@ -61,6 +61,7 @@ function read_list_menu() {
                     myProduct += '<div class="card__content">'
                     myProduct += '<div class="card__title">' + product +'</div>'
                     myProduct += '<p class="card__text">' + desc +'</p>'
+                    myProduct += '<p class="card__text"><span style="margin-right:5%; font-size: 21pt; font-weight: 700;">Rp. ' + harga.toLocaleString('id-ID') +'</span></p>'
                     myProduct += '<a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price=\"'+ harga +'\" data-product=\"'+ product +'\" data-bahan=\"'+ bahan +'\">'
                     myProduct += 'Add to Cart'
                     myProduct += '</a>'
