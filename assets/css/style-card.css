@@ -23,11 +23,10 @@ img {
   vertical-align: middle;
 }
 .btn {
-  background-color: white;
-  border: 1px solid #cccccc;
-  color: #696969;
-  padding: 0.5rem;
-  text-transform: lowercase;
+  background-color: hsl(204, 73%, 52%);
+  /* border: 1px solid #cccccc; */
+  color: #fff;
+  /* padding: 0.5rem; */
 }
 .btn--block {
   display: block;

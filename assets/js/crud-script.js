@@ -61,6 +61,7 @@ function validateForm() {
   let pengiriman = document.forms["fCustomer"]["pengiriman"].value;
 
   if (nama == "" || noHp == "" || alamat == "" || pengiriman == "Pilih" ) {
+    document.getElementById("collapseOne").classList.add('show');
     alert("Mohon Lengkapi Data Pengiriman");
     return false;
   }else{

@@ -112,11 +112,13 @@ function generatz(){
 			var productAdded = '<li class="cd-cart__product" data-harga=\"'+harga+'\" data-product=\"'+product+'\" data-bahan=\"'+bahan+'\" data-productId=\"'+productId+'\">';
 				productAdded +=  '<div class="cd-cart__image"><a href="#0"><img src="assets/cart/img/product-preview.png" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate">';
 				productAdded += '<a href="#0">'+product+'</a></h3><span class="cd-cart__price">Rp. '+harga+'</span><div class="cd-cart__actions">'
-				productAdded +='<a href="#0" class="cd-cart__delete-item">Delete</a><div class="cd-cart__quantity"><label for="cd-product-'+ productId +'">Jumlah</label><span class="cd-cart__select">'
+				productAdded +='<div class="cd-cart__quantity"><label for="cd-product-'+ productId +'">Jumlah</label><span class="cd-cart__select">'
+				// productAdded +='<button id="tambahQty" name="quantity"></button>'
 				productAdded +='<select class="reset" id="cd-product-'+ productId +'" name="quantity">'
-				productAdded +='<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select><svg class="icon" viewBox="0 0 12 12"><polyline fill="none" stroke="currentColor" points="2,4 6,8 10,4 "/></svg></span></div></div></div></li>'
+				productAdded +='<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select><svg class="icon" viewBox="0 0 12 12"><polyline fill="none" stroke="currentColor" points="2,4 6,8 10,4 "/></svg>'
+				productAdded +='</span><a href="#0" class="cd-cart__delete-item" style="padding-left:10px">Delete</a>'
 				// productAdded +='<input style="width:30%; border-style: groove;border: 1px solid #d3d3d4" type="number" class="reset" id="cd-product-'+ productId +'" name="quantity" step="1" value="1"/>'
-				// productAdded +='</div></div></div></li>'
+				productAdded +='</div></div></div></li>'
 
 			cartList.insertAdjacentHTML('beforeend', productAdded);
 		};
