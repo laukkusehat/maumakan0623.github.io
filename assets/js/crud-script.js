@@ -29,10 +29,12 @@ function checkout(){
           var namaProduct = this.getAttribute('data-product')
           var harga = this.getAttribute('data-harga')
           var productId = this.getAttribute('data-bahan')
-          var qty = $('#cd-product-'+productId+' :selected').text()
+          // var qty = $('#cd-product-'+productId+' :selected').text()
+          const qtyPrd = document.getElementById("cd-product-"+productId);
+          console.log("========"+qtyPrd.value)
 
-          listPesanan.push("%0A"+namaProduct +" (harga: Rp. "+harga.toLocaleString('id-ID')+", jumlah :"+qty+")")
-          hargaQty = harga*qty
+          listPesanan.push("%0A"+namaProduct +" (harga: Rp. "+harga.toLocaleString('id-ID')+", jumlah :"+qtyPrd.value+")")
+          hargaQty = harga*qtyPrd.value
           totHarga += parseInt(hargaQty)
 
       }); 
