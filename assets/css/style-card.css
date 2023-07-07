@@ -42,7 +42,7 @@ img {
 .cards__item {
   display: flex;
   width: 50%;
-  padding: 1rem;
+  padding: 0.1rem 0 0.1rem 0.1rem;
 }
 @media (min-width: 40rem) {
   .cards__item {
@@ -103,7 +103,7 @@ img {
   flex: 1 1 auto;
   font-size: 0.875rem;
   line-height: 1.5;
-  margin-bottom: 1.25rem;
+  margin: 0 0 0.5rem;
 }
 
 .habis{
