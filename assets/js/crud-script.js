@@ -28,7 +28,7 @@ function checkout(){
       $('.cd-cart__product').each(function(){
           var namaProduct = this.getAttribute('data-product')
           var harga = this.getAttribute('data-harga')
-          var productId = this.getAttribute('data-productId')
+          var productId = this.getAttribute('data-bahan')
           var qty = $('#cd-product-'+productId+' :selected').text()
 
           listPesanan.push("%0A"+namaProduct +" (harga: Rp. "+harga.toLocaleString('id-ID')+", jumlah :"+qty+")")
