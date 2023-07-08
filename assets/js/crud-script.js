@@ -10,7 +10,8 @@ function checkout(){
   $(".cd-cart__checkout").remove();
   $(".cd-cart__footer").html('<a href="#0" class="cd-cart__checkout"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></a>')
 
-  var listPesanan =[]; 
+  var listPesanan=[]
+  var kodeOrder=[]
 
   user = $( "#nama-p" ).val();
   alamat = document.getElementById("alamat").value;
@@ -34,6 +35,8 @@ function checkout(){
           console.log("========"+qtyPrd.value)
 
           listPesanan.push("%0A"+namaProduct +" (harga: Rp. "+harga.toLocaleString('id-ID')+", jumlah :"+qtyPrd.value+")")
+          kodeOrder.push(productId+"|"+qtyPrd.value)
+
           hargaQty = harga*qtyPrd.value
           totHarga += parseInt(hargaQty)
 
@@ -41,7 +44,7 @@ function checkout(){
       console.log(listPesanan) 
 
 
-      var url = script_url+"?callback=sendWA&pesanan="+listPesanan.join()+"&totHarga="+totHarga+"&user="+user+"&noHp="+noHp+"&alamat="+alamat+"&catatan="+catatan;
+      var url = script_url+"?callback=sendWA&pesanan="+listPesanan.join()+"&totHarga="+totHarga+"&user="+user+"&noHp="+noHp+"&alamat="+alamat+"&catatan="+catatan+"&kodeOrder="+kodeOrder;
           url += "&pengiriman="+pengiriman
           url += "&action=insert"
 
