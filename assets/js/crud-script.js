@@ -203,9 +203,11 @@ $.getJSON(url, function (json) {
 	}
   
 
-  function sendWA(){
+  function sendWA(e){
     var textWA = "https://wa.me/6288212493692?text="
     textWA += "Halo Mau Makan !"
+    textWA += "%0A=============="
+    textWA += "%0AOrder ID : "+e.orderId
     textWA += "%0A=============="
     textWA += "%0APenerima : "+user
     textWA += "%0ANo Hp : "+noHp

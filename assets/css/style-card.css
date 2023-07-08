@@ -85,7 +85,7 @@ img {
 .card__image::before {
   content: "";
   display: block;
-  padding-top: 56.25%;
+  padding-top: 97%;
 }
 @media (min-width: 40rem) {
   .card__image::before {
@@ -98,6 +98,8 @@ img {
   font-weight: 599;
   letter-spacing: 2px;
   text-transform: uppercase;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #e7e0e0;
 }
 .card__text {
   flex: 1 1 auto;

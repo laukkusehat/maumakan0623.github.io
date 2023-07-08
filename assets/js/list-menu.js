@@ -35,10 +35,11 @@ function read_list_menu() {
               if(stok=='Habis'){
                 var myProduct = '<li class="cards__item">';
                     myProduct += '<div class="card">'
-                    myProduct += '<div class="card__image" style="background-image: url(assets/img/product/' + linkImage +');"></div>'
+                    myProduct += '<div class="card__image" style="background-image: url(' + linkImage +');"></div>'
                     myProduct += '<div class="card__content">'
                     myProduct += '<div class="card__title">' + product +'</div>'
                     myProduct += '<p class="card__text">' + desc +'</p>'
+                    myProduct += '<p class="card__text"><span style="margin-right:5%; font-size: 13pt; font-weight: 700;">Rp. ' + harga.toLocaleString('id-ID') +'</span></p>'
                     myProduct += '<p class="card__text habis">Habis</h4></p>'
                     myProduct += '</div></div></li>'
                     x.innerHTML += myProduct
@@ -46,7 +47,7 @@ function read_list_menu() {
               }else {
                 var myProduct = '<li class="cards__item">';
                     myProduct += '<div class="card">'
-                    myProduct += '<div class="card__image" style="background-image: url(assets/img/product/' + linkImage +');"></div>'
+                    myProduct += '<div class="card__image" style="background-image: url(' + linkImage +');"></div>'
                     myProduct += '<div class="card__content">'
                     myProduct += '<div class="card__title">' + product +'</div>'
                     myProduct += '<p class="card__text">' + desc +'</p>'
