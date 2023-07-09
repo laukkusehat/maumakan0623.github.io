@@ -93,18 +93,21 @@ img {
 }
 .card__title {
   color: #696969;
-  font-size: 0.85rem;
-  font-weight: 599;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-size: 10pt;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  /* text-transform: uppercase; */
   padding-bottom: 7px;
   border-bottom: 1px solid #e7e0e0;
 }
 .card__text {
   flex: 1 1 auto;
-  font-size: 0.875rem;
+  font-size: 9pt;
   line-height: 1.5;
   margin: 0 0 0.5rem;
+}
+.price-text {
+  color: #696969;
 }
 
 .habis{

@@ -39,7 +39,7 @@ function read_list_menu() {
                     myProduct += '<div class="card__content">'
                     myProduct += '<div class="card__title">' + product +'</div>'
                     myProduct += '<p class="card__text">' + desc +'</p>'
-                    myProduct += '<p class="card__text"><span style="margin-right:5%; font-size: 13pt; font-weight: 700;">Rp. ' + harga.toLocaleString('id-ID') +'</span></p>'
+                    myProduct += '<p class="card__text price-text"><span style="margin-right:5%; font-size: 13pt; font-weight: 700;">Rp. ' + harga.toLocaleString('id-ID') +'</span></p>'
                     myProduct += '<p class="card__text habis">Habis</h4></p>'
                     myProduct += '</div></div></li>'
                     x.innerHTML += myProduct
@@ -51,9 +51,10 @@ function read_list_menu() {
                     myProduct += '<div class="card__content">'
                     myProduct += '<div class="card__title">' + product +'</div>'
                     myProduct += '<p class="card__text">' + desc +'</p>'
-                    myProduct += '<p class="card__text"><span style="margin-right:5%; font-size: 13pt; font-weight: 700;">Rp. ' + harga.toLocaleString('id-ID') +'</span></p>'
+                    myProduct += '<p class="card__text price-text"><span style="margin-right:5%; font-size: 13pt; font-weight: 700;">Rp. ' + harga.toLocaleString('id-ID') +'</span></p>'
                     myProduct += '<a href=\"#0\" class=\"cd-add-to-cart js-cd-add-to-cart\" data-price=\"'+ harga +'\" data-product=\"'+ product +'\" data-bahan=\"'+ bahan +'\">'
                     myProduct += 'Add to Cart'
+                    myProduct += '<img style="float: right" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABBklEQVR4nM3TMStFYRgH8CMDA8lkIIMMhMmgTCb5BIqU5WYSdRdGs9EiH8FuslCUxWywWHSV6ZaUkn469QzHcc7h3O5w//Uuz/u+v57ndN4k6flgAE0cYLkb4CgucItPLHWl0zS4wjPuO1g3GEmywbHO84WhPLhZcaGFp4r9xx9YgLMVF/axUbF/XgT24z138BVbmMZEoEWdHv4CA73LHWxHd3OYwm6Mn89aGXhaMlIzOi3LWBm4U3KhHeMXpVWIBTgZP3idnJWCgW7j7Z/YdfraKsHMG1/AYsUa/xPKoSfx7VYztT5c4gUzdcGHGOsoUxvER9TX64Lz2MNwrr6CRvoQaoE9kW8zxc1O58zUIAAAAABJRU5ErkJggg==">'
                     myProduct += '</a>'
                     myProduct += '</div></div></li>'
                     x.innerHTML += myProduct
