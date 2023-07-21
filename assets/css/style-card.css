@@ -115,3 +115,8 @@ img {
     font-size: 1.375rem;
     margin-bottom: 0rem;
 }
+
+.alamat{
+  overflow: auto;
+  height: 390px;
+}
